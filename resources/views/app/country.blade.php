@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<h3>Country</h3>
+<h3>Country Komax</h3>
 <hr>
 <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
