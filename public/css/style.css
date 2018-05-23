@@ -1,0 +1,4 @@
+/* Your custom styles */
+.dropdown-toggle::after {
+    color: #fff;
+}
