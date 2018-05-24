@@ -1,5 +1,5 @@
 <?php
-
+Auth::routes();
 Route::get('/','AppController@index');
 route::get('/verify/{token}/{id}', 'Auth\RegisterController@verify_register');
 
@@ -7,29 +7,29 @@ Route::get('home-admin', function () {
     return view('app/home_admin');
 })->middleware('auth:admin');
 
-Route::group(['middleware' => 'admin'], function(){
-    // Route::get('/home-admin','adminController@home_admin');
-    Route::get('/report','adminController@report');
-    Route::get('/barkode-jepang','adminController@barkod');
-    Route::get('/buyer','adminController@buyer');
-    Route::get('/bucomp','adminController@bucomp');
-    Route::get('/company','adminController@company');
-    Route::get('/country','adminController@country');
-    Route::get('/item','adminController@item');
-    Route::get('/member','adminController@member');
-    Route::get('/add-buyer','adminController@add_buyer');
-    Route::get('/edit-buyer','adminController@edit_buyer');
-    Route::get('/add-bucomp','adminController@add_bucomp');
-    Route::get('/edit-bucomp','adminController@edit_bucomp');
-    Route::get('/add-company','adminController@add_company');
-    Route::get('/edit-company','adminController@edit_company');
-    Route::get('/add-country','adminController@add_country');
-    Route::get('/edit-country','adminController@edit_country');
-    Route::get('/add-item','adminController@add_item');
-    Route::get('/edit-item','adminController@edit_item');
-    Route::get('/add-member','adminController@add_member');
-    Route::get('/edit-member','adminController@edit_member');
-});
+
+    Route::get('/home-admin','adminController@home_admin')->middleware('auth:admin');
+    Route::get('/report','adminController@report')->middleware('auth:admin');
+    Route::get('/barkode-jepang','adminController@barkod')->middleware('auth:admin');
+    Route::get('/buyer','adminController@buyer')->middleware('auth:admin');
+    Route::get('/bucomp','adminController@bucomp')->middleware('auth:admin');
+    Route::get('/company','adminController@company')->middleware('auth:admin');
+    Route::get('/country','adminController@country')->middleware('auth:admin');
+    Route::get('/item','adminController@item')->middleware('auth:admin');
+    Route::get('/member','adminController@member')->middleware('auth:admin');
+    Route::get('/add-buyer','adminController@add_buyer')->middleware('auth:admin');
+    Route::get('/edit-buyer','adminController@edit_buyer')->middleware('auth:admin');
+    Route::get('/add-bucomp','adminController@add_bucomp')->middleware('auth:admin');
+    Route::get('/edit-bucomp','adminController@edit_bucomp')->middleware('auth:admin');
+    Route::get('/add-company','adminController@add_company')->middleware('auth:admin');
+    Route::get('/edit-company','adminController@edit_company')->middleware('auth:admin');
+    Route::get('/add-country','adminController@add_country')->middleware('auth:admin');
+    Route::get('/edit-country','adminController@edit_country')->middleware('auth:admin');
+    Route::get('/add-item','adminController@add_item')->middleware('auth:admin');
+    Route::get('/edit-item','adminController@edit_item')->middleware('auth:admin');
+    Route::get('/add-member','adminController@add_member')->middleware('auth:admin');
+    Route::get('/edit-member','adminController@edit_member')->middleware('auth:admin');
+
 
 // Route::group(['middleware' => 'admin'], function(){
 //     Route::get('/home-user','adminController@home_user');
@@ -105,7 +105,7 @@ Route::get('trans-barcode-jepang', function () {
 // });
 
 Route::get('/login', 'AppController@index');
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('guest');
 

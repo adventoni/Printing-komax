@@ -10192,6 +10192,7 @@ button.mdb-autocomplete-clear svg {
 }
 .toast-title,.white-skin .side-nav .collapsible li a {
  font-weight:400
+ text-decoration: none;
 }
 .stepper-vertical li .step-content {
  display:block;
@@ -10996,7 +10997,8 @@ button.toast-close-button {
  color:#424242;
  -webkit-transition:all .3s linear;
  -o-transition:all .3s linear;
- transition:all .3s linear
+ transition:all .3s linear;
+ text-decoration: none;
 }
 .white-skin .side-nav .collapsible li .collapsible-header.active {
  color:#4285F4;
@@ -11006,7 +11008,8 @@ button.toast-close-button {
  background-color:rgba(0,0,0,.05)
 }
 .white-skin .side-nav .collapsible li .collapsible-body a {
- color:#424242
+ color:#424242;
+ text-decoration: none;
 }
 .white-skin .side-nav .collapsible li .collapsible-body a:hover {
  color:#4285F4

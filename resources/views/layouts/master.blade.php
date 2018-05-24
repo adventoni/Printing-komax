@@ -15,7 +15,7 @@
     <!-- Your custom styles (optional) -->
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link href="/css/compiled.min.css" rel="stylesheet">
+    {{-- <link href="/css/compiled.min.css" rel="stylesheet"> --}}
     <link href="/css/style.css" rel="stylesheet">
 </head>
 
