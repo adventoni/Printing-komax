@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class adminController extends Controller
 {
-    public function dashboard()
+    public function home_admin()
     {
-        die('ini halaman dashboard');
+        return view('app/home_admin');
     }
     public function barkod()
     {
@@ -90,4 +90,21 @@ class adminController extends Controller
     {
        return view('app/report');
     }
+    // //user
+    // public function home_user()
+    // {
+    //    return view('app/user/home_user');
+    // }
+    // public function report_user()
+    // {
+    //    return view('app/user/report_user');
+    // }
+    // public function reprint_barcode_jepang()
+    // {
+    //    return view('app/user/reprint_barcode_jepang');
+    // }
+    // public function trans_barcode_jepang()
+    // {
+    //    return view('app/user/trans_barcode_jepang');
+    // }
 }

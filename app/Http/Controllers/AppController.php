@@ -8,7 +8,7 @@ class AppController extends Controller
 {
     public function index()
     {
-        return view('Auth/login');
+        return view('login/form_login');
     }
     
 }

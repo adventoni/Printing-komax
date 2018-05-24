@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Css Login Form</title>
+  <title>Login Komax Indonesia</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 
 
@@ -143,10 +143,13 @@ input[type="submit"]:active {
 <body>
 
   <div class="login">
-    <input type="text" placeholder="Username" id="username">  
-  <input type="password" placeholder="password" id="password">  
-  <a href="#" class="forgot">forgot password?</a>
-  <input type="submit" value="Sign In">
+    <form name"login" action="/kirimdata" method="post">
+      {{csrf_field()}}
+      <input type="text" placeholder="Username" name="username">  
+      <input type="password" placeholder="password" name="password">  
+      <a href="#" class="forgot">forgot password?</a>
+      <input type="submit" value="Sign In">
+    </form>
 </div>
 <div class="shadow"></div>
   
