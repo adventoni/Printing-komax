@@ -145,8 +145,8 @@ input[type="submit"]:active {
   <div class="login">
     <form name"login" action="/kirimdata" method="post">
       {{csrf_field()}}
-      <input type="text" placeholder="Username" name="username">  
-      <input type="password" placeholder="password" name="password">  
+      <input type="text" placeholder="Username" name="username" required>  
+      <input type="password" placeholder="password" name="password" required>  
       <a href="#" class="forgot">forgot password?</a>
       <input type="submit" value="Sign In">
     </form>
