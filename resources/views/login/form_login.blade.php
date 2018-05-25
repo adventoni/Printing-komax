@@ -141,7 +141,6 @@ input[type="submit"]:active {
 </head>
 
 <body>
-
   <div class="login">
     <form name"login" action="/kirimdata" method="post">
       {{csrf_field()}}
