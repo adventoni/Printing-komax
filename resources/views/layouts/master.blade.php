@@ -83,7 +83,9 @@
                     <!--/. Side navigation links -->
                 </ul>
                 <div class="sidenav-bg mask-strong"></div>
-                
+                <nav class="navbar fixed-bottom navbar-dark indigo lighten-5">
+                        <p>KOMAX INDONESIA &copy; 2018 </p>
+                      </nav>
             </div>
         <!--/. Sidebar navigation -->
         <!-- Navbar -->
@@ -124,13 +126,13 @@
         <div class="container-fluid mt-5">
             @yield('content')
         </div>
-    </main>
+    </main><br><br>
     <!--Main Layout-->
 
 <!--/. Sidebar navigation -->
     
     <!-- /Start your project here-->
-
+                      
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>

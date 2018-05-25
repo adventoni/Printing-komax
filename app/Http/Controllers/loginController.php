@@ -27,7 +27,7 @@ class loginController extends Controller
     }
     else
     {
-        return "Gagal Login";
+        return abort('403');
     }
    }
    public function logout()
