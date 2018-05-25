@@ -28,7 +28,7 @@
                 <ul class="custom-scrollbar list-unstyled" style="max-height:100vh;">
                     <!-- Logo -->
                     <li>
-                        <div class="logo-wrapper waves-light waves-effect waves-light">
+                        <div class="logo-wrapper waves-effect waves-light">
                             <a href="#"><img src="img/logo/logo.PNG" class="img-fluid flex-center"></a>
                         </div>
                     </li>
@@ -45,7 +45,7 @@
                     <!-- Side navigation links -->
                     <li>
                         <ul class="collapsible collapsible-accordion">
-                            <li class=""><a class="collapsible-header waves-effect" href="/home"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
+                            <li class=""><a class="collapsible-header waves-effect" href="/home-admin"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a>
 
                             </li>
                             <li class=""><a class="collapsible-header waves-effect" href="/report"><i class="fa fa-file" aria-hidden="true"></i></i> File - Report</a>

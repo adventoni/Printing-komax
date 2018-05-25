@@ -10,10 +10,8 @@
             {{ session('status') }}
         </div>
     @endif
-
-    You are logged in!
 </div>
-<p>
-    <img src="/img/logobuyer/Puma.png">
-</p>
+<div class="view zoom">
+    <img src="/img/logobuyer/Puma.png" class="img-fluid " alt="">
+</div>
 @endsection

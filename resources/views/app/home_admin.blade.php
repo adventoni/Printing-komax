@@ -9,10 +9,11 @@
             {{ session('status') }}
         </div>
     @endif
-
-    You are logged in!
 </div>
-<p>
+{{-- <p>
     <img src="/img/content.png">
-</p>
+</p> --}}
+<div class="view zoom">
+    <img src="/img/content.png" class="img-fluid " alt="">
+</div>
 @endsection
