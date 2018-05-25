@@ -110,13 +110,13 @@ input[type="submit"] {
   position:relative;
   cursor:pointer;
   border: none;  
-  background-color: #37a69b;
+  background-color:#283593;
   background-image: linear-gradient(top,#3db0a6,#3111);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius:5px;
-  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #1a237e, 0px 10px 5px #999;
 }
 
 .shadow {
