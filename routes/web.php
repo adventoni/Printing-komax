@@ -107,7 +107,5 @@ Route::get('trans-barcode-jepang', function () {
 Route::get('/login', 'AppController@index');
 
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('guest');
-
 Route::post('/kirimdata', 'loginController@login');
 Route::get('/keluar', 'loginController@logout');
