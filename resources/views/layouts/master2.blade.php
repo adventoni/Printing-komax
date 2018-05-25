@@ -72,7 +72,9 @@
                     <!--/. Side navigation links -->
                 </ul>
                 <div class="sidenav-bg mask-strong"></div>
-                
+                <nav class="navbar fixed-bottom navbar-dark indigo lighten-5">
+                        <p>KOMAX INDONESIA &copy; 2018 </p>
+                      </nav>
             </div>
         <!--/. Sidebar navigation -->
         <!-- Navbar -->
