@@ -14,6 +14,16 @@
             </tr>
         </thead>
         <tbody>
+                {{-- @foreach ($buyers as $buyer)
+                <tr>
+                  <td>{{ $buyer+1 }}</td>
+                  <td>{{ $buyer->id_buyer }}</td>
+                  <td>{{ $buyer->name_buyer }}</td>
+                  <td>{{ $buyer->images_buyer }}</td>
+                  <td>{{ $buyer->created_at }}</td>
+                  <td><a href="/edit-buyer"><i class="fa fa-edit" aria-hidden="true"> Edit</i> </a></td>
+                </tr>
+              @endforeach --}}
             <tr>
                 <td>Tiger Nixon</td>
                 <td>System Architect</td>

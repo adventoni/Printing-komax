@@ -8,12 +8,15 @@
             <form>
             
                 <label for="defaultFormRegisterNameEx" class="grey-text">Kode Buyer</label>
-                <input type="text" id="defaultFormRegisterNameEx" class="form-control">
+                <input type="text" name="kode_buyer" id="defaultFormRegisterNameEx" class="form-control" >
                 
                 <br>
 
                 <label for="defaultFormRegisterEmailEx" class="grey-text">Buyer Name</label>
-                <input type="email" id="defaultFormRegisterEmailEx" class="form-control">
+                <input type="text" name="buyer_name" id="defaultFormRegisterEmailEx" class="form-control">
+                
+                <label for="defaultFormRegisterEmailEx" class="grey-text">Images Buyer</label>
+                <input type="file" name="gambar" id="defaultFormRegisterEmailEx" class="form-control">
                 
                 <br>
                 <section id="rounded-outline-buttons">

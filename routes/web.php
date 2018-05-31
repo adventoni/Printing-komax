@@ -30,6 +30,9 @@ Route::get('home-admin', function () {
     Route::get('/add-member','adminController@add_member')->middleware('auth:admin');
     Route::get('/edit-member','adminController@edit_member')->middleware('auth:admin');
 
+    Route::get('app/aksi/add-buyer', 'AksiController@add_buyer')->name('app/aksi.add_buyer');
+    Route::get('app/buyer', 'AksiController@buyer')->name('app.buyer');
+    Route::post('app/aksi/upload', 'AksiController@upload')->name('app/aksi.upload');   
 
 // Route::group(['middleware' => 'admin'], function(){
 //     Route::get('/home-user','adminController@home_user');
@@ -104,7 +107,7 @@ Route::get('trans-barcode-jepang', function () {
 //     return view('app/aksi/edit_member');
 // });
 
-Route::get('/login', 'AppController@index');
+Route::get('/login', 'AppController@index')->middleware('guest');
 
 
 Route::post('/kirimdata', 'loginController@login');
