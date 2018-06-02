@@ -11,10 +11,13 @@
                 <input type="text" id="defaultFormRegisterNameEx" class="form-control">        
 
                 <label for="defaultFormRegisterEmailEx" class="grey-text">Bucomp Name</label>
-                <input type="email" id="defaultFormRegisterEmailEx" class="form-control">
+                <input type="text" id="defaultFormRegisterEmailEx" class="form-control">
+
+                <label for="defaultFormRegisterEmailEx" class="grey-text">Bucomp Name</label>
+                <input type="text" id="defaultFormRegisterEmailEx" class="form-control">
     
                 <label for="defaultFormRegisterEmailEx" class="grey-text">City</label>
-                <input type="email" id="defaultFormRegisterEmailEx" class="form-control">
+                <input type="text" id="defaultFormRegisterEmailEx" class="form-control">
 
                 <label for="exampleFormControlTextarea1" class="grey-text">Address</label>
                 <textarea class="md-textarea md-textarea-auto form-control" id="exampleFormControlTextarea1" rows="5"></textarea>

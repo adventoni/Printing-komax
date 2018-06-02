@@ -3,9 +3,9 @@ Auth::routes();
 Route::get('/','AppController@index');
 route::get('/verify/{token}/{id}', 'Auth\RegisterController@verify_register');
 
-Route::get('home-admin', function () {
-    return view('app/home_admin');
-})->middleware('auth:admin');
+// Route::get('home-admin', function () {
+//     return view('app/home_admin');
+// })->middleware('auth:admin');
 
 
     Route::get('/home-admin','adminController@home_admin')->middleware('auth:admin');
@@ -17,8 +17,14 @@ Route::get('home-admin', function () {
     Route::get('/country','adminController@country')->middleware('auth:admin');
     Route::get('/item','adminController@item')->middleware('auth:admin');
     Route::get('/member','adminController@member')->middleware('auth:admin');
-    Route::get('/add-buyer','adminController@add_buyer')->middleware('auth:admin');
-    Route::get('/edit-buyer','adminController@edit_buyer')->middleware('auth:admin');
+    
+    Route::get('/add-buyer','adminController@create_buyer')->middleware('auth:admin');
+    Route::post('/buyer','adminController@store_buyer')->middleware('auth:admin');
+    Route::get('/buyer/{id}', 'adminController@show')->middleware('auth:admin');
+    Route::get('/buyer/{id}/edit-buyer','adminController@edit_buyer')->middleware('auth:admin');
+    Route::put('/buyer/{id}', 'adminController@update_buyer')->middleware('auth:admin');
+    Route::delete('/buyer/{id}', 'adminController@destroy')->middleware('auth:admin');
+
     Route::get('/add-bucomp','adminController@add_bucomp')->middleware('auth:admin');
     Route::get('/edit-bucomp','adminController@edit_bucomp')->middleware('auth:admin');
     Route::get('/add-company','adminController@add_company')->middleware('auth:admin');
@@ -30,9 +36,10 @@ Route::get('home-admin', function () {
     Route::get('/add-member','adminController@add_member')->middleware('auth:admin');
     Route::get('/edit-member','adminController@edit_member')->middleware('auth:admin');
 
-    Route::get('app/aksi/add-buyer', 'AksiController@add_buyer')->name('app/aksi.add_buyer');
-    Route::get('app/buyer', 'AksiController@buyer')->name('app.buyer');
-    Route::post('app/aksi/upload', 'AksiController@upload')->name('app/aksi.upload');   
+   
+    // Route::get('app/aksi/add-buyer', 'AksiController@add_buyer')->name('app/aksi.add_buyer');
+    // Route::get('app/buyer', 'AksiController@buyer')->name('app.buyer');
+    // Route::post('app/aksi/upload', 'AksiController@upload')->name('app/aksi.upload');   
 
 // Route::group(['middleware' => 'admin'], function(){
 //     Route::get('/home-user','adminController@home_user');

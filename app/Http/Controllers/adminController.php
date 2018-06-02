@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use App\Buyer;
 class adminController extends Controller
 {
     public function home_admin()
@@ -16,7 +17,13 @@ class adminController extends Controller
     }
     public function buyer()
     {
-        return view('app/buyer');
+        $buyers = Buyer ::all();
+        return view('app/buyer',['buyers' => $buyers]);
+    }
+    public function show($id)
+    {
+        $buyers = Buyer ::find($id);
+        return view('app/buyer',['buyer' => $buyer]);
     }
     public function bucomp()
     {
@@ -38,14 +45,54 @@ class adminController extends Controller
     {
         return view('app/member');
     }
-    public function add_buyer()
+    public function create_buyer()
     {
         return view('app/aksi/add_buyer');
     }
-    public function edit_buyer()
+    public function store_buyer(Request $request)
     {
-        return view('app/aksi/edit_buyer');
+        $this->validate($request,[
+            'id_buyer'      => 'required',
+            'name_buyer'    => 'required',
+            'images_buyer'  => 'mimes:jpeg,jpg,png'
+          
+        ]);
+            $filename = time(). '.png';
+            $request->file('images_buyer')->storeAs('public/buyer',$filename);
+
+        $buyer = new Buyer;
+        $buyer->id_buyer = $request->id_buyer;
+        $buyer->name_buyer = $request->name_buyer;
+        $buyer->images_buyer = $filename;
+        $buyer->save();
+
+        return redirect('buyer');
     }
+
+    public function edit_buyer($id)
+    {
+        $buyer = Buyer::find($id);
+        return view('app/aksi/edit_buyer', ['buyer' =>$buyer]);
+    }
+    public function update_buyer(Request $request, $id)
+    {
+        $filename = time(). '.png';
+        $request->file('images_buyer')->storeAs('public/buyer',$filename);
+
+        $buyer = Buyer::find($id);
+        $buyer->id_buyer = $request->id_buyer;
+        $buyer->name_buyer = $request->name_buyer;
+        $buyer->images_buyer = $filename;
+        $buyer->save();
+        return redirect('/buyer');
+    }
+    public function destroy($id)
+    {
+        $buyer = Buyer::find($id);
+        $buyer->delete();
+        return redirect('/buyer');
+    }
+
     public function add_bucomp()
     {
         return view('app/aksi/add_bucomp');

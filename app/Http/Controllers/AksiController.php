@@ -9,17 +9,9 @@ use Illuminate\Http\RedirectResponse;
 
 class AksiController extends Controller
 {
-    public function buyer(): View
-    {
-        $buyers = Buyer::orderBy('created_at', 'DESC');
-        return view('app.buyer', compact('buyers'));
-    }
-    public function add_buyer(): View
-    {
-        return view('app/aksi.add_buyer');
-    }
-    public function upload(Request $request): RedirectResponse
-    {
-         
-    }
+   public function index()
+   {
+       $buyers = Buyer::all();
+       return view('app/buyer',['$buyers => $buyers']);
+   }
 }

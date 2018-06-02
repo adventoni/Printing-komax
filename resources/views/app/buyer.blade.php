@@ -9,28 +9,27 @@
                 <th>No</th>
                 <th>Kode Buyer</th>
                 <th>Buyer Name</th>
+                <th>Images Buyer</th>
                 <th>Date</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-                {{-- @foreach ($buyers as $buyer)
+                @foreach ($buyers as $key => $value)
                 <tr>
-                  <td>{{ $buyer+1 }}</td>
-                  <td>{{ $buyer->id_buyer }}</td>
-                  <td>{{ $buyer->name_buyer }}</td>
-                  <td>{{ $buyer->images_buyer }}</td>
-                  <td>{{ $buyer->created_at }}</td>
-                  <td><a href="/edit-buyer"><i class="fa fa-edit" aria-hidden="true"> Edit</i> </a></td>
+                  <td>{{ $key+1 }}</td>
+                  <td>{{ $value->id_buyer }}</td>
+                  <td>{{ $value->name_buyer }}</td>
+                  <td><img src="{{ asset('storage/buyer/' . $value->images_buyer) }}" width="150"></td>
+                  <td>{{ $value->created_at }}</td>
+                <td><a href="/buyer/{{$value->id}}/edit-buyer"><i class="fa fa-edit" aria-hidden="true"> Edit</i> </a>
+                    <form action="/buyer/{{$value->id}}" method="POST">
+                        <i class="fa fa-trash" aria-hidden="true"> <input type="submit" name="submit" value="Delete">
+                        {{ csrf_field()}}
+                        <input type="hidden" name="_method" value="DELETE">
+                        </form></td>
                 </tr>
-              @endforeach --}}
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td><a href="/edit-buyer"><i class="fa fa-edit" aria-hidden="true"> Edit</i> </a></td>
-            </tr>
+              @endforeach
             </tbody>
     </table>
     <section id="rounded-outline-buttons">
