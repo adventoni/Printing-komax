@@ -11,13 +11,15 @@ route::get('/verify/{token}/{id}', 'Auth\RegisterController@verify_register');
     Route::get('/home-admin','adminController@home_admin')->middleware('auth:admin');
     Route::get('/report','adminController@report')->middleware('auth:admin');
     Route::get('/barkode-jepang','adminController@barkod')->middleware('auth:admin');
-    Route::get('/buyer','adminController@buyer')->middleware('auth:admin');
-    Route::get('/bucomp','adminController@bucomp')->middleware('auth:admin');
-    Route::get('/company','adminController@company')->middleware('auth:admin');
-    Route::get('/country','adminController@country')->middleware('auth:admin');
-    Route::get('/item','adminController@item')->middleware('auth:admin');
-    Route::get('/member','adminController@member')->middleware('auth:admin');
+   
+   
     
+   
+    
+   
+    
+    //Route Buyer
+    Route::get('/buyer','adminController@buyer')->middleware('auth:admin');
     Route::get('/add-buyer','adminController@create_buyer')->middleware('auth:admin');
     Route::post('/buyer','adminController@store_buyer')->middleware('auth:admin');
     Route::get('/buyer/{id}', 'adminController@show')->middleware('auth:admin');
@@ -25,17 +27,48 @@ route::get('/verify/{token}/{id}', 'Auth\RegisterController@verify_register');
     Route::put('/buyer/{id}', 'adminController@update_buyer')->middleware('auth:admin');
     Route::delete('/buyer/{id}', 'adminController@destroy')->middleware('auth:admin');
 
-    Route::get('/add-bucomp','adminController@add_bucomp')->middleware('auth:admin');
-    Route::get('/edit-bucomp','adminController@edit_bucomp')->middleware('auth:admin');
-    Route::get('/add-company','adminController@add_company')->middleware('auth:admin');
-    Route::get('/edit-company','adminController@edit_company')->middleware('auth:admin');
-    Route::get('/add-country','adminController@add_country')->middleware('auth:admin');
-    Route::get('/edit-country','adminController@edit_country')->middleware('auth:admin');
-    Route::get('/add-item','adminController@add_item')->middleware('auth:admin');
-    Route::get('/edit-item','adminController@edit_item')->middleware('auth:admin');
-    Route::get('/add-member','adminController@add_member')->middleware('auth:admin');
-    Route::get('/edit-member','adminController@edit_member')->middleware('auth:admin');
+    //Route Bucomp
+    Route::get('/bucomp','adminController@bucomp')->middleware('auth:admin');
+    Route::get('/add-bucomp','adminController@create_bucomp')->middleware('auth:admin');
+    Route::post('/bucomp','adminController@store_bucomp')->middleware('auth:admin');
+    Route::get('/bucomp/{id}', 'adminController@showBucomp')->middleware('auth:admin');
+    Route::get('/bucomp/{id}', 'adminController@showBucompid')->middleware('auth:admin');
+    Route::get('/bucomp/{id}/edit-bucomp','adminController@edit_bucomp')->middleware('auth:admin');
+    Route::put('/bucomp/{id}', 'adminController@update_bucomp')->middleware('auth:admin');
+    Route::delete('/bucomp/{id}', 'adminController@delete_bucomp')->middleware('auth:admin');
 
+    //Route Company
+    Route::get('/company','adminController@company')->middleware('auth:admin');
+    Route::get('/add-company','adminController@create_company')->middleware('auth:admin');
+    Route::post('/company','adminController@store_company')->middleware('auth:admin');
+    Route::get('/company/{id}', 'adminController@showCompanyid')->middleware('auth:admin');
+    Route::get('/company/{id}/edit-company','adminController@edit_company')->middleware('auth:admin');
+    Route::put('/company/{id}', 'adminController@update_company')->middleware('auth:admin');
+    Route::delete('/company/{id}', 'adminController@delete_company')->middleware('auth:admin');
+
+    //Rourte Country
+    Route::get('/country','adminController@country')->middleware('auth:admin');
+    Route::get('/add-country','adminController@create_country')->middleware('auth:admin');
+    Route::post('/country','adminController@store_country')->middleware('auth:admin');
+    Route::get('/country/{id}', 'adminController@showCountry')->middleware('auth:admin');
+    Route::get('/country/{id}/edit-country','adminController@edit_country')->middleware('auth:admin');
+    Route::put('/country/{id}', 'adminController@update_country')->middleware('auth:admin');
+    Route::delete('/country/{id}', 'adminController@delete_country')->middleware('auth:admin');
+
+    //Route Item
+    Route::get('/item','adminController@item')->middleware('auth:admin');
+    Route::get('/add-item','adminController@create_item')->middleware('auth:admin');
+    Route::post('/item','adminController@store_item')->middleware('auth:admin');
+    Route::get('/item/{id}', 'adminController@showItem')->middleware('auth:admin');
+    Route::get('/item/{id}', 'adminController@showItemid')->middleware('auth:admin');
+    Route::get('/item/{id}/edit-item','adminController@edit_item')->middleware('auth:admin');
+    Route::put('/item/{id}', 'adminController@update_item')->middleware('auth:admin');
+    Route::delete('/item/{id}', 'adminController@delete_item')->middleware('auth:admin');
+
+    //Rote Member
+    Route::get('/member','adminController@member')->middleware('auth:admin');
+    
+    Route::get('/dropdown','DropdownController@pilihan')->middleware('auth:admin');
    
     // Route::get('app/aksi/add-buyer', 'AksiController@add_buyer')->name('app/aksi.add_buyer');
     // Route::get('app/buyer', 'AksiController@buyer')->name('app.buyer');

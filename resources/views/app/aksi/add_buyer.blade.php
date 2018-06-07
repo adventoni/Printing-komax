@@ -22,6 +22,16 @@
                 @if($errors->has('images_buyer'))
                 <p> {{ $errors->first('images_buyer')}} </p>
                 @endif
+                <label for="exampleFormControlTextarea1" class="grey-text">Hak Akses</label>
+                <select class="custom-select" name="hak_akses">
+                        <option selected disabled>--Select--</option>
+                        <option value="1">Member</option> 
+                        <option value="0">Bukan Member</option>                       
+                </select> 
+                @if($errors->has('hak_akses'))
+                <p> {{ $errors->first('hak_akses')}} </p>
+                @endif
+
                 <br>
                 <section id="rounded-outline-buttons">
                         <section>

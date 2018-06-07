@@ -29,7 +29,7 @@
                     <!-- Logo -->
                     <li>
                         <div class="logo-wrapper waves-effect waves-light">
-                            <a href="#"><img src="img/logo/logo.PNG" class="img-fluid flex-center"></a>
+                            <a href="#"><img src="/img/logo/logo.PNG" class="img-fluid flex-center"></a>
                         </div>
                     </li>
                     <!--/. Logo -->

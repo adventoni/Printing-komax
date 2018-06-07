@@ -17,16 +17,23 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td><a href="/edit-bucomp"><i class="fa fa-edit" aria-hidden="true"> Edit</i> </a></td>
-            </tr>
+                @foreach ($bucomps as $key => $value)
+                <tr>
+                  <td>{{ $key+1 }}</td>
+                  <td>{{ $value->kode_bucomp }}</td>
+                  <td>{{ $value->bucomp_name }}</td>
+                  <td>{{ $value->buyer->name_buyer }}</td>
+                  <td>{{ $value->city }}</td>
+                  <td>{{ $value->address }}</td>
+                  <td>{{ $value->created_at }}</td>
+                <td><a href="bucomp/{{$value->id}}/edit-bucomp"><i class="fa fa-edit" aria-hidden="true"> Edit</i> </a>
+                    <form action="/bucomp/{{$value->id}}" method="POST">
+                        <i class="fa fa-trash" aria-hidden="true"><input type="submit" name="submit" value="Delete">
+                        {{ csrf_field()}}
+                        <input type="hidden" name="_method" value="DELETE">
+                        </form></td>
+                </tr>
+              @endforeach
             </tbody>
     </table>
     <section id="rounded-outline-buttons">

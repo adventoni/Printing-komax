@@ -16,15 +16,23 @@
             </tr>
         </thead>
         <tbody>
+                @foreach ($countries as $key => $value)
             <tr>
-                <td>1</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>61</td>
-                <td><a href="/edit-country"><i class="fa fa-edit" aria-hidden="true"> Edit</i> </a></td>
+                <td>{{ $key+1 }}</td>
+                <td>{{ $value->country_id }}</td>
+                <td>{{ $value->country_name }}</td>
+                <td>{{ $value->num_code }}</td>
+                <td>{{ $value->alpha_code }}</td>
+                <td>{{ $value->code_iso }}</td>
+                <td><a href="country/{{$value->id}}/edit-country"><i class="fa fa-edit" aria-hidden="true"> Edit</i> </a>
+                    <form action="/country/{{$value->id}}" method="POST">
+                        <i class="fa fa-trash" aria-hidden="true"><input type="submit" name="submit" value="Delete">
+                        {{ csrf_field()}}
+                        <input type="hidden" name="_method" value="DELETE">
+                        </form>
+                </td>
             </tr>
+            @endforeach
             </tbody>
     </table>
     <section id="rounded-outline-buttons">

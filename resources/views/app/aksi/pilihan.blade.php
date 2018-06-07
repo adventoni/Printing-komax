@@ -1,8 +1,10 @@
 <label for="exampleFormControlTextarea1" class="grey-text">Select Buyer</label>
-                <select class="custom-select">
-                        <option selected>--Select--</option>
-                        <option value="1">Adidas</option>
-                        <option value="2">Nike</option>
-                        <option value="3">Puma</option>
-                        <option value="4">New Balance</option>
-                      </select>
+                <select class="custom-select" name="buyers">
+                        <option selected disabled>--Select--</option>
+                        @foreach($buyers as $key => $value)
+                        <option value="{{ $value->id }}">{{ $value->name_buyer }}</option>
+                        @endforeach
+                </select> 
+                @if($errors->has('buyer'))
+                <p> {{ $errors->first('buyer')}} </p>
+                @endif

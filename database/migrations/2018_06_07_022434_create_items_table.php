@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBucompsTable extends Migration
+class CreateItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateBucompsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bucomps', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kode_bucomp');
-            $table->string('bucomp_name');
-            $table->string('buyer_name');
-            $table->string('city');
-            $table->string('address');
+            $table->string('item_id');
+            $table->string('item_name');
+            $table->integer('buyer_id')->unsigned();
             $table->timestamps();
+            $table->foreign('buyer_id')->references('id')->on('buyers')->onDelete('cascade');
         });
     }
 
@@ -31,6 +30,6 @@ class CreateBucompsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bucomps');
+        Schema::dropIfExists('items');
     }
 }

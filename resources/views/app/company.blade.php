@@ -17,16 +17,23 @@
             </tr>
         </thead>
         <tbody>
+                @foreach ($companies as $key => $value)
             <tr>
-                <td>1</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td><a href="/edit-company"><i class="fa fa-edit" aria-hidden="true"> Edit</i> </a></td>
+                    <td>{{ $key+1 }}</td>
+                    <td>{{ $value->company_id }}</td>
+                    <td>{{ $value->company_name }}</td>
+                    <td>{{ $value->country_name }}</td>
+                    <td>{{ $value->company_city }}</td>
+                    <td>{{ $value->company_address }}</td>
+                    <td>{{ $value->created_at }}</td>
+                <td><a href="company/{{$value->id}}/edit-company"><i class="fa fa-edit" aria-hidden="true"> Edit</i> </a>
+                    <form action="/company/{{$value->id}}" method="POST">
+                        <i class="fa fa-trash" aria-hidden="true"><input type="submit" name="submit" value="Delete">
+                        {{ csrf_field()}}
+                        <input type="hidden" name="_method" value="DELETE">
+                        </form></td>
             </tr>
+            @endforeach
             </tbody>
     </table>
     <section id="rounded-outline-buttons">

@@ -9,13 +9,18 @@
                 <label for="defaultFormRegisterNameEx" class="grey-text">Kode Buyer</label>
                 <input type="text" name="id_buyer" id="defaultFormRegisterNameEx" class="form-control" value="{{ $buyer->id_buyer}}">
                 
-                <br>
-            
-                <!-- Default input email -->
                 <label for="defaultFormRegisterEmailEx" class="grey-text">Buyer Name</label>
                 <input type="text" name="name_buyer" id="defaultFormRegisterEmailEx" class="form-control" value="{{ $buyer->name_buyer}}">
-                <br>
+
+                <label for="defaultFormRegisterEmailEx" class="grey-text">Images Buyer</label>
                 <input type="file" name="images_buyer" id="defaultFormRegisterEmailEx" class="form-control"><img src="{{ asset('storage/buyer/' . $buyer->images_buyer) }}" width="150">
+                <br>
+                <label for="exampleFormControlTextarea1" class="grey-text">Hak Akses</label>
+                <select class="custom-select" name="hak_akses">
+                        <option selected disabled>--Select--</option>
+                        <option value="1">Member</option> 
+                        <option value="0">Bukan Member</option>                   
+                </select> 
                 <br>
                 <section id="rounded-outline-buttons">
                         <section>
