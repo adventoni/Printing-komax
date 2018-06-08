@@ -9,7 +9,7 @@
             <div class="file-field">
                 <h4>File Barcode Jepang (PM32)</h4>
                 <h6>File .XLS</h6>
-                <div class="btn indigo darken-4 btn-sm float-left waves-effect waves-light">
+                <div class="btn btn-primary btn-sm float-left btn-rounded waves-effect waves-light">
                     <span>Choose file</span>
                     <input type="file">
                 </div>
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div>
-                <button type="submit" class="btn indigo darken-4 btn-sm float-left z-depth-1a  waves-effect waves-light">GO !</button>
+                <button type="button" class="btn btn-primary  btn-sm btn-rounded waves-effect waves-light">GO !</button>
             </div>
         </div>
     </div>

@@ -7,4 +7,4 @@
                 </select> 
                 @if($errors->has('buyer'))
                 <p> {{ $errors->first('buyer')}} </p>
-                @endif
+                @endif 

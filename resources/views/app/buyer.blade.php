@@ -31,9 +31,10 @@
                         Unknown
                         @endif </td>
                   <td>{{ $value->created_at }}</td>
-                <td><a href="/buyer/{{$value->id}}/edit-buyer"><i class="fa fa-edit" aria-hidden="true"> Edit</i> </a>
+                <td><a href="/buyer/{{$value->id}}/edit-buyer"><button type="submit" class="btn  btn-rounded btn-sm waves-effect"><font color="grey"><i class="fa fa-edit" aria-hidden="true">  Edit </i></font></button></a>
                     <form action="/buyer/{{$value->id}}" method="POST">
-                        <i class="fa fa-trash" aria-hidden="true"><input type="submit" name="submit" value="Delete">
+                       <button type="submit" class="btn  btn-rounded btn-sm waves-effect" name="submit" value="Delete"><font color="grey"> <i class="fa fa-trash" aria-hidden="true"> Delete </i></font></button>
+
                         {{ csrf_field()}}
                         <input type="hidden" name="_method" value="DELETE">
                         </form></td>

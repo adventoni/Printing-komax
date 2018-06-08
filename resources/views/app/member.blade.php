@@ -33,9 +33,4 @@
               @endforeach
             </tbody>
     </table>
-    <section id="rounded-outline-buttons">
-            <section>
-                    <a class="btn btn-outline-primary btn-rounded btn-sm waves-effect" href="/add-member"><i class="fa fa-file-o" aria-hidden="true"></i> Add </a>
-            </section>
-    </section>
 @endsection

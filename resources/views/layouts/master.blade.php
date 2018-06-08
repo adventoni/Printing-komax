@@ -157,6 +157,7 @@
     $('#example').DataTable();
     } );      
     </script>
+   
 
 </body>
 
