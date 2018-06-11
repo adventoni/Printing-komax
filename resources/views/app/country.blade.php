@@ -26,7 +26,7 @@
                 <td>{{ $value->code_iso }}</td>
                 <td><a href="country/{{$value->id}}/edit-country"><button type="submit" class="btn  btn-rounded btn-sm waves-effect"><font color="grey"><i class="fa fa-edit" aria-hidden="true">  Edit </i></font></button></a>
                     <form action="/country/{{$value->id}}" method="POST">
-                        <button type="submit" class="btn  btn-rounded btn-sm waves-effect" name="submit" value="Delete"><font color="grey"> <i class="fa fa-trash" aria-hidden="true"> Delete </i></font></button>
+                        <button type="submit" class="btn  btn-rounded btn-sm waves-effect" name="submit" value="Delete" onclick="return confirm('Hapus Data?')"><font color="grey" > <i class="fa fa-trash" aria-hidden="true"> Delete </i></font></button>
                         {{ csrf_field()}}
                         <input type="hidden" name="_method" value="DELETE">
                         </form>

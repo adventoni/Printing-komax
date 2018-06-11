@@ -24,6 +24,10 @@ class adminController extends Controller
     {
         return view('app/home_admin');
     }
+    public function profil_user()
+    {
+        return view('app/profil/profil');
+    }
     public function barkod()
     {
         return view('app/barkode_jepang');
@@ -138,8 +142,8 @@ class adminController extends Controller
         $buyer->images_buyer    = $filename;
         $buyer->hak_akses       = $request->hak_akses;
         $buyer->save();
-
-        return redirect('buyer');
+  
+        return redirect('buyer')->with('success','Data Berhasil disimpan');
     }
     public function edit_buyer($id)
     {
@@ -157,13 +161,13 @@ class adminController extends Controller
         $buyer->images_buyer    = $filename;
         $buyer->hak_akses       = $request->hak_akses;
         $buyer->save();
-        return redirect('/buyer');
+        return redirect('/buyer')->with('info','Data Berhasil diupdate');
     }
     public function destroy($id)
     {
         $buyer = Buyer::find($id);
         $buyer->delete();
-        return redirect('/buyer');
+        return redirect('/buyer')->with('danger','Data Berhasil dihapus');
     }
 
 
@@ -191,7 +195,7 @@ class adminController extends Controller
         $bucomp->buyer_id    = $request->buyers;
         $bucomp->save();
 
-        return redirect('bucomp');
+        return redirect('bucomp')->with('success','Data Berhasil disimpan');
     }
     public function edit_bucomp($id)
     {
@@ -208,13 +212,13 @@ class adminController extends Controller
         $bucomp->address     = $request->address;
         $bucomp->buyer_id    = $request->buyers;
         $bucomp->save();
-        return redirect('/bucomp');
+        return redirect('/bucomp')->with('info','Data Berhasil diupdate');
     }
     public function delete_bucomp($id)
     {
         $bucomp = Bucomp::find($id);
         $bucomp->delete();
-        return redirect('/bucomp');
+        return redirect('/bucomp')->with('danger','Data Berhasil dihapus');
     }
 
 
@@ -242,7 +246,7 @@ class adminController extends Controller
         $country->code_iso     = $request->code_iso;
         $country->save();
 
-        return redirect('country');
+        return redirect('country')->with('success','Data Berhasil disimpan');
     }
     public function edit_country($id)
     {
@@ -258,13 +262,13 @@ class adminController extends Controller
         $country->alpha_code   = $request->alpha_code;
         $country->code_iso     = $request->code_iso;
         $country->save();
-        return redirect('/country');
+        return redirect('/country')->with('info','Data Berhasil diupdate');
     }
     public function delete_country($id)
     {
         $country = Country::find($id);
         $country->delete();
-        return redirect('/country');
+        return redirect('/country')->with('danger','Data Berhasil dihapus');
     }
 
 
@@ -292,7 +296,7 @@ class adminController extends Controller
         $company->id_country        = $request->id_country;
         $company->save();
 
-        return redirect('company');
+        return redirect('company')->with('success','Data Berhasil disimpan');
     }
     public function edit_company($id)
     {
@@ -310,13 +314,13 @@ class adminController extends Controller
         $company->id_country        = $request->id_country;
         $company->save();
 
-        return redirect('company');
+        return redirect('company')->with('info','Data Berhasil diupdate');
     }
     public function delete_company($id)
     {
         $company = Company::find($id);
         $company->delete();
-        return redirect('company');
+        return redirect('company')->with('danger','Data Berhasil dihapus');
     }
 
 
@@ -338,7 +342,7 @@ class adminController extends Controller
         $item->item_name   = $request->item_name;
         $item->buyer_id    = $request->buyers;
         $item->save();
-        return redirect('item');
+        return redirect('item')->with('success','Data Berhasil disimpan');
     }
     public function edit_item($id)
     {
@@ -353,13 +357,13 @@ class adminController extends Controller
         $item->item_name   = $request->item_name;
         $item->buyer_id    = $request->buyers;
         $item->save();
-        return redirect('/item');
+        return redirect('/item')->with('info','Data Berhasil diupdate');
     }
     public function delete_item($id)
     {
         $item = Item::find($id);
         $item->delete();
-        return redirect('/item');
+        return redirect('/item')->with('danger','Data Berhasil dihapus');
     }
 
     //crud member

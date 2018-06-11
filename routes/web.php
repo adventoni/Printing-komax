@@ -7,15 +7,12 @@ route::get('/verify/{token}/{id}', 'Auth\RegisterController@verify_register');
 //     return view('app/home_admin');
 // })->middleware('auth:admin');
 
+    Route::get('/profil-user','adminController@profil_user')->middleware('auth:admin');
+   
 
     Route::get('/home-admin','adminController@home_admin')->middleware('auth:admin');
     Route::get('/report','adminController@report')->middleware('auth:admin');
     Route::get('/barkode-jepang','adminController@barkod')->middleware('auth:admin');
-   
-   
-    
-   
-    
    
     
     //Route Buyer

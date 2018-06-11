@@ -104,7 +104,7 @@
                                 <i class="fa fa-user-circle-o white-text fa-2x" aria-hidden="true"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item waves-effect waves-light" href="#"><i class="fa fa-user-o"></i> User Profil</a>
+                                <a class="dropdown-item waves-effect waves-light" href="/profil-user"><i class="fa fa-user-o"></i> User Profil</a>
                                 <a class="dropdown-item waves-effect waves-light" href="{{ route('logout') }}" 
                                 onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();">
@@ -124,6 +124,7 @@
     <!--Main Layout-->
     <main>
         <div class="container-fluid mt-5">
+            @include('layouts.partials._alerts')
             @yield('content')
         </div>
     </main><br><br>
