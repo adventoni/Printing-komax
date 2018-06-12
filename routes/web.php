@@ -7,6 +7,7 @@ route::get('/verify/{token}/{id}', 'Auth\RegisterController@verify_register');
 //     return view('app/home_admin');
 // })->middleware('auth:admin');
 
+    //halaman profil admin & user
     Route::get('/profil-admin','adminController@profil_admin')->middleware('auth:admin');
     Route::get('/profil-user','adminController@profil_user')->middleware('auth:user1');
 
