@@ -98,13 +98,16 @@
             <div class="breadcrumb-dn mr-auto">
                 <p><font color="white" size="6"><b>KOMAX INDONESIA</b></font></p>
             </div>
+            
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                <li><font color="white"> {{ Auth::user()->username }}</font></li>
                     <li class="nav-item dropdown white-text">
                             <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-user-circle-o white-text fa-2x" aria-hidden="true"></i>
                             </a>
+                           
                             <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item waves-effect waves-light" href="/profil-user"><i class="fa fa-user-o"></i> User Profil</a>
+                                <a class="dropdown-item waves-effect waves-light" href="/profil-admin"><i class="fa fa-user-o"></i> User Profil</a>
                                 <a class="dropdown-item waves-effect waves-light" href="{{ route('logout') }}" 
                                 onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();">

@@ -24,9 +24,13 @@ class adminController extends Controller
     {
         return view('app/home_admin');
     }
-    public function profil_user()
+    public function profil_admin()
     {
         return view('app/profil/profil');
+    }
+    public function profil_user()
+    {
+        return view('app/user/profil_user');
     }
     public function barkod()
     {
